@@ -64,14 +64,28 @@
   }
 
   .nav-logo {
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-size: 1.25rem;
-    letter-spacing: -0.5px;
-    color: var(--white);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
     text-decoration: none;
   }
-  .nav-logo span { color: var(--blue); }
+  .nav-logo-icon {
+    width: 32px; height: 32px;
+    background: var(--blue);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 0 14px rgba(29,114,245,0.45);
+  }
+  .nav-logo-wordmark {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: -0.03em;
+    color: var(--white);
+    line-height: 1;
+  }
+  .nav-logo-wordmark span { color: var(--blue); }
 
   .nav-links {
     display: flex; align-items: center; gap: 2rem;
@@ -627,7 +641,15 @@
 
 <!-- ─── NAV ─── -->
 <nav>
-  <a href="#home" class="nav-logo">Triage<span>IQ</span></a>
+  <a href="#home" class="nav-logo">
+    <div class="nav-logo-icon">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 2L3 5.5V9C3 12.3 5.6 15.4 9 16C12.4 15.4 15 12.3 15 9V5.5L9 2Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M6.5 9L8 10.5L11.5 7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="nav-logo-wordmark">Triage<span>IQ</span></div>
+  </a>
   <ul class="nav-links">
     <li><a href="#home">Home</a></li>
     <li><a href="#how-it-works">How It Works</a></li>
@@ -635,7 +657,7 @@
     <li><a href="#pricing">Pricing</a></li>
   </ul>
   <div class="nav-right">
-    <a href="#pricing" class="btn btn-primary">Get Started — £997</a>
+    <a href="#pricing" class="btn btn-primary">Get Started — $997</a>
     <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -647,7 +669,7 @@
   <a href="#how-it-works" onclick="closeMenu()">How It Works</a>
   <a href="#results" onclick="closeMenu()">Results</a>
   <a href="#pricing" onclick="closeMenu()">Pricing</a>
-  <a href="#pricing" class="btn btn-primary" style="margin-top:.5rem" onclick="closeMenu()">Get Started — £997</a>
+  <a href="#pricing" class="btn btn-primary" style="margin-top:.5rem" onclick="closeMenu()">Get Started — $997</a>
 </div>
 
 <!-- ─── HERO ─── -->
@@ -656,7 +678,7 @@
   <h1 class="hero-headline">Automatically route, prioritise and acknowledge every support ticket — without hiring anyone</h1>
   <p class="hero-sub">TriageIQ is an AI support triage system built for SaaS startups. Every ticket is instantly classified, prioritised, routed to the right team and acknowledged — in under 8 seconds.</p>
   <div class="hero-buttons">
-    <a href="#pricing" class="btn btn-primary btn-lg">Get Started — £997</a>
+    <a href="#pricing" class="btn btn-primary btn-lg">Get Started — $997</a>
     <a href="#how-it-works" class="btn btn-outline btn-lg">See How It Works</a>
   </div>
   <div class="hero-trust">
@@ -792,7 +814,7 @@
     <div class="pricing-card-wrap fade-up">
       <div class="pricing-card">
         <div class="price-block">
-          <div class="price-amount">£997</div>
+          <div class="price-amount">$997</div>
           <div class="price-sub">One-time setup fee</div>
         </div>
         <div class="price-divider"></div>
@@ -807,7 +829,7 @@
           <li><i class="check-icon">✓</i> 30 minute handover call</li>
           <li><i class="check-icon">✓</i> 30 days email support</li>
         </ul>
-        <a href="https://buy.stripe.com/00wdR91bX1gxeela7S5wI00" target="_blank" class="btn btn-primary">Get Started Today</a>
+        <a href="https://cal.com/naeem-dzsy3c/triageiq-free-discovery-call" target="_blank" class="btn btn-primary">Get Started Today</a>
         <p class="pricing-footnote">30 day support included. Live in 48 hours.</p>
       </div>
     </div>
@@ -854,7 +876,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          Why £997 and not a monthly fee?
+          Why $997 and not a monthly fee?
           <span class="faq-arrow">+</span>
         </button>
         <div class="faq-a"><p>Because you should own your tools. No subscriptions, no lock-in. Pay once, use forever.</p></div>
@@ -868,7 +890,15 @@
   <div class="container">
     <div class="footer-main">
       <div>
-        <div class="footer-brand">Triage<span style="color:var(--blue)">IQ</span></div>
+        <div style="display:inline-flex;align-items:center;gap:0.55rem;">
+          <div class="nav-logo-icon" style="width:28px;height:28px;">
+            <svg width="16" height="16" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 2L3 5.5V9C3 12.3 5.6 15.4 9 16C12.4 15.4 15 12.3 15 9V5.5L9 2Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M6.5 9L8 10.5L11.5 7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="footer-brand">Triage<span style="color:var(--blue)">IQ</span></div>
+        </div>
         <div class="footer-brand-sub">AI Support Triage for SaaS Startups</div>
       </div>
       <div class="footer-cta">
