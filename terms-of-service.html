@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — FewerClicks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #0A1628;
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: -200px; left: 50%;
+    transform: translateX(-50%);
+    width: 800px; height: 500px;
+    background: radial-gradient(ellipse at center, rgba(29,114,245,0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ─── HEADER ─── */
+  header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(10,22,40,0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    padding: 0 5%;
+    height: 64px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+
+  .logo {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    text-decoration: none;
+  }
+  .logo-icon {
+    width: 30px; height: 30px;
+    background: #1D72F5;
+    border-radius: 7px;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 0 12px rgba(29,114,245,0.4);
+    flex-shrink: 0;
+  }
+  .logo-text {
+    font-weight: 700; font-size: 1.05rem;
+    letter-spacing: -0.03em; color: #fff;
+  }
+  .logo-text span { color: #1D72F5; }
+
+  .back-link {
+    font-size: 0.82rem; color: #A0AEC0;
+    text-decoration: none;
+    display: flex; align-items: center; gap: 0.4rem;
+    transition: color 0.2s;
+  }
+  .back-link:hover { color: #fff; }
+
+  /* ─── MAIN ─── */
+  main {
+    position: relative; z-index: 1;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 4rem 5% 6rem;
+  }
+
+  .page-title {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .page-label {
+    display: inline-block;
+    font-size: 0.68rem; font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: #1D72F5;
+    background: rgba(29,114,245,0.1);
+    border: 1px solid rgba(29,114,245,0.25);
+    padding: 0.3rem 0.8rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .page-title h1 {
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 700; letter-spacing: -0.03em;
+    margin-bottom: 0.5rem;
+  }
+  .page-title .updated {
+    font-size: 0.82rem; color: #A0AEC0;
+  }
+
+  /* ─── CONTENT ─── */
+  .intro-box {
+    background: rgba(29,114,245,0.06);
+    border: 1px solid rgba(29,114,245,0.2);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2.5rem;
+    font-size: 0.88rem;
+    color: #A0AEC0;
+    line-height: 1.7;
+  }
+  .intro-box strong { color: #e2e8f0; }
+
+  .section {
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  .section-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 28px; height: 28px;
+    background: rgba(29,114,245,0.15);
+    border: 1px solid rgba(29,114,245,0.3);
+    border-radius: 6px;
+    font-size: 0.72rem; font-weight: 700;
+    color: #1D72F5;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.01em;
+  }
+
+  .section h2 {
+    font-size: 1.1rem; font-weight: 600;
+    color: #fff; letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+
+  .section p {
+    font-size: 0.9rem; color: #A0AEC0;
+    line-height: 1.75; margin-bottom: 0.85rem;
+  }
+  .section p:last-child { margin-bottom: 0; }
+
+  .section ul {
+    list-style: none;
+    margin: 0.75rem 0;
+    display: flex; flex-direction: column; gap: 0.5rem;
+  }
+  .section ul li {
+    font-size: 0.9rem; color: #A0AEC0;
+    line-height: 1.65;
+    display: flex; align-items: flex-start; gap: 0.6rem;
+  }
+  .section ul li::before {
+    content: '—';
+    color: #1D72F5;
+    flex-shrink: 0;
+    margin-top: 1px;
+    font-size: 0.8rem;
+  }
+
+  .highlight-box {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-left: 3px solid #1D72F5;
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+  }
+  .highlight-box p {
+    margin-bottom: 0 !important;
+    font-size: 0.88rem !important;
+  }
+
+  strong { color: #e2e8f0; font-weight: 600; }
+
+  a { color: #1D72F5; text-decoration: none; transition: color 0.2s; }
+  a:hover { color: #3A87FF; text-decoration: underline; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    position: relative; z-index: 1;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding: 2rem 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-logo {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    text-decoration: none;
+  }
+  .footer-copy {
+    font-size: 0.78rem;
+    color: rgba(160,174,192,0.5);
+  }
+
+  @media (max-width: 600px) {
+    main { padding: 2.5rem 5% 4rem; }
+    footer { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── HEADER ─── -->
+<header>
+  <a href="https://fewerclicks.net" class="logo">
+    <div class="logo-icon">
+      <svg width="16" height="16" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 2L3 5.5V9C3 12.3 5.6 15.4 9 16C12.4 15.4 15 12.3 15 9V5.5L9 2Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M6.5 9L8 10.5L11.5 7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <span class="logo-text">Fewer<span>Clicks</span></span>
+  </a>
+  <a href="https://fewerclicks.net" class="back-link">← Back to site</a>
+</header>
+
+<!-- ─── MAIN ─── */
+<main>
+  <div class="page-title">
+    <div class="page-label">Legal</div>
+    <h1>Terms of Service</h1>
+    <p class="updated">Last updated June 06, 2026</p>
+  </div>
+
+  <div class="intro-box">
+    <strong>Please read these terms carefully before purchasing.</strong> By placing an order for TriageIQ, you confirm that you have read, understood, and agreed to these Terms of Service. If you do not agree, please do not proceed with your purchase.
+  </div>
+
+  <!-- 1 -->
+  <div class="section">
+    <div class="section-num">01</div>
+    <h2>Acceptance of Terms</h2>
+    <p>These Terms of Service ("Terms") form a legally binding agreement between you ("Client," "you," or "your") and <strong>Naeem Feroz</strong>, trading as <strong>FewerClicks</strong> ("we," "us," or "our"), a sole trader registered in England.</p>
+    <p>By purchasing TriageIQ — whether through our website at <a href="https://fewerclicks.net">fewerclicks.net</a>, via a payment link, or by any other means — you confirm that:</p>
+    <ul>
+      <li>You are at least 18 years old and have the legal capacity to enter into a binding contract.</li>
+      <li>If purchasing on behalf of a business, you have the authority to bind that business to these Terms.</li>
+      <li>You have read and accepted these Terms in full.</li>
+    </ul>
+    <p>We reserve the right to update these Terms at any time. The version in effect at the time of your purchase governs your order.</p>
+  </div>
+
+  <!-- 2 -->
+  <div class="section">
+    <div class="section-num">02</div>
+    <h2>Description of Service</h2>
+    <p>TriageIQ is a done-for-you AI-powered customer support triage system, built and configured specifically for your business. The service includes:</p>
+    <ul>
+      <li>A custom branded support intake form hosted on your website or a provided link.</li>
+      <li>AI classification of incoming support tickets by category, priority, and sentiment, powered by Claude AI (Anthropic).</li>
+      <li>Automatic email routing of tickets to the correct team or individual based on your specified rules.</li>
+      <li>Instant automated acknowledgement emails sent to your customers upon ticket submission.</li>
+      <li>Critical ticket escalation alerts for high-priority or urgent submissions.</li>
+      <li>A daily management summary report delivered every morning.</li>
+      <li>A Google Sheets dashboard for tracking and visibility.</li>
+      <li>A 30-minute handover call to walk you through the system.</li>
+      <li>30 days of email support following delivery (see Section 5).</li>
+    </ul>
+    <p>The service is delivered as described above. Any features, integrations, or customisations not listed here are outside the scope of this agreement unless agreed in writing prior to purchase.</p>
+    <p>TriageIQ relies on third-party services including Google (Forms, Sheets, Gmail), and Anthropic (Claude AI). While we will take all reasonable steps to deliver a working system, we cannot be held responsible for outages, changes, or limitations imposed by these third-party providers after delivery.</p>
+  </div>
+
+  <!-- 3 -->
+  <div class="section">
+    <div class="section-num">03</div>
+    <h2>Payment Terms</h2>
+    <p>The price for TriageIQ is a <strong>one-time fee of $997 USD</strong>. There are no monthly fees, subscriptions, or ongoing charges of any kind.</p>
+    <p>Payment is processed securely through Stripe. By completing your purchase, you authorise the charge of $997 to your selected payment method.</p>
+
+    <div class="highlight-box">
+      <p><strong>Refund Policy:</strong> You are entitled to a full refund if you request it within <strong>24 hours of purchase</strong> and work has not yet begun on your system. Once we have started building or configuring your TriageIQ setup, no refund will be issued. To request a refund, email <a href="mailto:hello@fewerclicks.net">hello@fewerclicks.net</a> within the 24-hour window.</p>
+    </div>
+
+    <p>We will notify you by email when work begins. If you have not received such a notification and 24 hours have not passed since purchase, you remain eligible for a full refund upon request.</p>
+    <p>All prices are displayed in USD. Any currency conversion costs or banking fees are the responsibility of the Client.</p>
+  </div>
+
+  <!-- 4 -->
+  <div class="section">
+    <div class="section-num">04</div>
+    <h2>Delivery</h2>
+    <p>We aim to have your TriageIQ system fully live and operational within <strong>48 hours of purchase</strong>, subject to you providing the required information in a timely manner.</p>
+    <p>To complete your setup, we will request the following from you after purchase:</p>
+    <ul>
+      <li>Your company name and branding details.</li>
+      <li>The email addresses for each team or individual who should receive routed tickets.</li>
+      <li>Access to a Google account for the Sheets dashboard and Gmail routing.</li>
+      <li>Any specific ticket categories or routing rules you require.</li>
+    </ul>
+    <p>The 48-hour delivery window begins once we have received all required information from you. Delays caused by late or incomplete information from the Client will extend the delivery window accordingly. We are not liable for delays caused by circumstances outside our reasonable control.</p>
+    <p>Delivery will be confirmed via email, along with a link to your system, your Google Sheets dashboard, and instructions for your handover call.</p>
+  </div>
+
+  <!-- 5 -->
+  <div class="section">
+    <div class="section-num">05</div>
+    <h2>Support</h2>
+    <p>Your purchase includes <strong>30 days of email support</strong> from the date your system goes live. During this period, we will:</p>
+    <ul>
+      <li>Fix any bugs or errors in the system caused by our configuration.</li>
+      <li>Make reasonable adjustments to routing rules, categories, or email templates.</li>
+      <li>Answer questions about how to use and manage your system.</li>
+    </ul>
+    <p>Support is provided via email at <a href="mailto:hello@fewerclicks.net">hello@fewerclicks.net</a>. We aim to respond to all support requests within one business day (Monday to Friday, 9am–5pm GMT).</p>
+    <p>Support does not include the addition of entirely new features, significant rebuilds, or changes to the underlying third-party platforms. After the 30-day support period, ongoing support or changes may be available at an additional cost, to be agreed separately.</p>
+  </div>
+
+  <!-- 6 -->
+  <div class="section">
+    <div class="section-num">06</div>
+    <h2>Limitation of Liability</h2>
+    <p>To the fullest extent permitted by law, our total liability to you for any claims arising out of or in connection with this agreement — regardless of the legal basis for the claim — shall not exceed the amount you paid for the service (<strong>$997 USD</strong>).</p>
+    <p>We shall not be liable for any:</p>
+    <ul>
+      <li>Loss of profits, revenue, or business opportunities.</li>
+      <li>Loss of data or corruption of data.</li>
+      <li>Indirect, consequential, or incidental losses of any kind.</li>
+      <li>Service interruptions caused by third-party platforms (Google, Anthropic, Stripe, or others).</li>
+      <li>Losses arising from your failure to provide accurate information during setup.</li>
+    </ul>
+    <p>Nothing in these Terms excludes or limits our liability for death or personal injury caused by our negligence, fraud or fraudulent misrepresentation, or any other liability that cannot be excluded or limited under English law.</p>
+  </div>
+
+  <!-- 7 -->
+  <div class="section">
+    <div class="section-num">07</div>
+    <h2>Intellectual Property</h2>
+    <p>Upon full payment and successful delivery of your TriageIQ system, you own the configured setup as it applies to your business — including the intake form, routing logic, and Google Sheets dashboard we build for you.</p>
+    <p>However, the following remain the intellectual property of FewerClicks:</p>
+    <ul>
+      <li>Our underlying processes, workflows, templates, and methodologies used to build the system.</li>
+      <li>Any proprietary code, scripts, or automation logic developed by us.</li>
+      <li>The TriageIQ name, branding, and all associated materials.</li>
+    </ul>
+    <p>You may not resell, sublicense, or present the TriageIQ system as your own product or service to third parties. You may use the system freely within your own business operations.</p>
+    <p>Any content, data, or materials you provide to us during setup remain your property at all times.</p>
+  </div>
+
+  <!-- 8 -->
+  <div class="section">
+    <div class="section-num">08</div>
+    <h2>Prohibited Activities</h2>
+    <p>By purchasing and using TriageIQ, you agree not to use the system for any of the following purposes:</p>
+    <ul>
+      <li>Any activity that is unlawful, fraudulent, or harmful under the laws of England and Wales or your local jurisdiction.</li>
+      <li>Collecting, storing, or processing personal data in a manner that violates UK GDPR or any applicable data protection legislation.</li>
+      <li>Sending unsolicited marketing communications or spam via the system's email features.</li>
+      <li>Attempting to reverse-engineer, copy, or replicate the system for resale or redistribution.</li>
+      <li>Using the system to harass, discriminate against, or harm individuals.</li>
+      <li>Circumventing or interfering with the security or operation of any third-party platform integrated into the system.</li>
+    </ul>
+    <p>We reserve the right to withdraw support and assistance if we reasonably believe the system is being used in a prohibited manner. This does not entitle the Client to a refund.</p>
+  </div>
+
+  <!-- 9 -->
+  <div class="section">
+    <div class="section-num">09</div>
+    <h2>Governing Law</h2>
+    <p>These Terms and any dispute or claim arising out of or in connection with them (including non-contractual disputes or claims) shall be governed by and construed in accordance with the laws of <strong>England and Wales</strong>.</p>
+    <p>Both parties agree to submit to the exclusive jurisdiction of the courts of England and Wales to resolve any disputes arising from these Terms or your use of the TriageIQ service.</p>
+    <p>If any provision of these Terms is found to be invalid or unenforceable by a court of competent jurisdiction, that provision shall be modified to the minimum extent necessary to make it enforceable, and the remaining provisions shall continue in full force and effect.</p>
+  </div>
+
+  <!-- 10 -->
+  <div class="section">
+    <div class="section-num">10</div>
+    <h2>Contact Information</h2>
+    <p>If you have any questions about these Terms, wish to request a refund, or need to get in touch regarding your order, please contact us using the details below:</p>
+    <ul>
+      <li><strong>Business name:</strong> FewerClicks (trading name of Naeem Feroz)</li>
+      <li><strong>Email:</strong> <a href="mailto:hello@fewerclicks.net">hello@fewerclicks.net</a></li>
+      <li><strong>Website:</strong> <a href="https://fewerclicks.net">fewerclicks.net</a></li>
+      <li><strong>Location:</strong> Manchester, England</li>
+    </ul>
+    <p>We aim to respond to all enquiries within one business day.</p>
+  </div>
+
+</main>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <a href="https://fewerclicks.net" class="footer-logo">
+    <div class="logo-icon" style="width:26px;height:26px;">
+      <svg width="14" height="14" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 2L3 5.5V9C3 12.3 5.6 15.4 9 16C12.4 15.4 15 12.3 15 9V5.5L9 2Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M6.5 9L8 10.5L11.5 7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <span class="logo-text" style="font-size:0.95rem;">Fewer<span>Clicks</span></span>
+  </a>
+  <span class="footer-copy">© 2026 FewerClicks. All rights reserved.</span>
+</footer>
+
+</body>
+</html>
